@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Innova Import Piura</title>
+  <meta name="description" content="Catálogo completo: laptops, PCs, audífonos, periféricos gamer, accesorios y hogar. Importados a los mejores precios en Piura.">
+  <link rel="stylesheet" href="assets/css/globals.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/catalog.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- SCRIPTS -->
+  <script src="assets/js/toast.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        Innova<span>.</span>
+      </div>
+
+      <nav id="nav">
+        <a href="index.html">Inicio</a>
+        <a href="catalog.html">Catálogo</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="cart-icon" id="cartBtn" title="Ver cotización">
+          Cotizar <span id="ico">🛒</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO CATÁLOGO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image: url('https://img.freepik.com/free-photo/top-view-devices-supplies-composition_23-2149552421.jpg?t=st=1773366015~exp=1773369615~hmac=76d7f8c0f614feb1cc0eba20d8ee3d961cac477f005bf85b293be3db05a09df3&w=1060');"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__noise"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">🔥 Importados · Tecnología · Piura</p>
+
+      <h1>Innova<br><em>Catalogo</em></h1>
+
+      <div class="hero-divider">
+        <span></span><i>✦</i><span></span>
+      </div>
+
+      <p class="hero-sub">
+        Laptops, PCs armadas, audífonos, periféricos gamer y accesorios.<br>
+        Importados de EE.UU. y China · Delivery a todo Piura y provincias.
+      </p>
+    </div>
+  </section>
+  </section>
+
+  <!-- SECCIÓN CATÁLOGO -->
+  <section class="catalog-section">
+    <div class="catalog-layout">
+
+      <!-- SIDEBAR FILTROS -->
+      <aside class="filters-sidebar">
+        <div class="filters-scroll">
+
+          <div class="sidebar-heading">
+            <div class="sidebar-heading-line"></div>
+            <span>Filtrar</span>
+            <div class="sidebar-heading-line"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Disponibilidad</h3>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="inStockFilter" checked>
+              <span>En stock (<span id="inStockCount">12</span>)</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="outOfStockFilter">
+              <span>Agotado (<span id="outStockCount">0</span>)</span>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Precio (S/.)</h3>
+            <div class="price-range">
+              <div class="price-slider-container">
+                <div class="slider-track" id="sliderTrack"></div>
+                <input type="range" id="minPriceRange" min="0" max="9999" value="0" step="1" class="price-slider">
+                <input type="range" id="maxPriceRange" min="0" max="9999" value="9999" step="1" class="price-slider">
+              </div>
+              <div class="price-inputs">
+                <div class="price-input-group">
+                  <span class="currency">S/</span>
+                  <input type="number" id="minPriceInput" value="0" min="0" max="9999">
+                </div>
+                <div class="price-input-group">
+                  <span class="currency">S/</span>
+                  <input type="number" id="maxPriceInput" value="9999" min="0" max="9999">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3 class="filter-title">Categoría</h3>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="computadoras" class="category-filter">
+              <span>💻 Computadoras</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="perifericos" class="category-filter">
+              <span>🖱️ Periféricos</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="audio" class="category-filter">
+              <span>🎧 Audio</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="accesorios" class="category-filter">
+              <span>📱 Accesorios</span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" value="hogar" class="category-filter">
+              <span>🏠 Hogar</span>
+            </label>
+          </div>
+
+          <button class="btn btn-secondary" id="clearFilters">
+            Limpiar filtros
+          </button>
+
+        </div>
+      </aside>
+
+      <!-- ÁREA PRODUCTOS -->
+      <div class="products-main">
+
+        <!-- Buscador -->
+        <div class="products-search">
+          <div class="search-wrapper">
+            <svg class="search-icon" width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 11l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar laptops, audífonos, mouse...">
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="products-header">
+          <p class="products-count-label">
+            Mostrando <strong id="productsCount">0</strong> productos
+          </p>
+          <div class="products-controls">
+            <select id="sortSelect" class="sort-select">
+              <option value="">Ordenar por</option>
+              <option value="best-selling">🔥 Más vendido</option>
+              <option value="alphabetical-asc">A → Z</option>
+              <option value="alphabetical-desc">Z → A</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="date-desc">Más antiguos</option>
+              <option value="date-asc">Más recientes</option>
+            </select>
+
+            <div class="view-options">
+              <button class="view-btn" data-columns="2" title="2 columnas">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+                  <rect x="1" y="1" width="7" height="7"/><rect x="10" y="1" width="7" height="7"/>
+                  <rect x="1" y="10" width="7" height="7"/><rect x="10" y="10" width="7" height="7"/>
+                </svg>
+              </button>
+              <button class="view-btn active" data-columns="3" title="3 columnas">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+                  <rect x="1" y="1" width="4" height="4"/><rect x="7" y="1" width="4" height="4"/><rect x="13" y="1" width="4" height="4"/>
+                  <rect x="1" y="7" width="4" height="4"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="7" width="4" height="4"/>
+                  <rect x="1" y="13" width="4" height="4"/><rect x="7" y="13" width="4" height="4"/><rect x="13" y="13" width="4" height="4"/>
+                </svg>
+              </button>
+              <button class="view-btn" data-columns="4" title="4 columnas">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
+                  <rect x="1" y="1" width="3" height="3"/><rect x="6" y="1" width="3" height="3"/><rect x="11" y="1" width="3" height="3"/><rect x="15" y="1" width="2" height="3"/>
+                  <rect x="1" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="11" y="6" width="3" height="3"/><rect x="15" y="6" width="2" height="3"/>
+                  <rect x="1" y="11" width="3" height="3"/><rect x="6" y="11" width="3" height="3"/><rect x="11" y="11" width="3" height="3"/><rect x="15" y="11" width="2" height="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="products-grid grid-3" id="productsGrid">
+          <!-- Cards inyectadas por products.js -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-watermark">Innova</div>
+
+    <div class="footer-main">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <p class="footer-logo">Innova<span>.</span></p>
+          <p class="footer-tagline">Tecnología &amp; Importados Piura</p>
+          <div class="footer-brand-divider">
+            <span></span><i>✦</i><span></span>
+          </div>
+          <p class="footer-desc">
+            Tienda de importados en el corazón de Piura. Tecnología, hogar y gadgets
+            traídos de EE.UU. y China a los mejores precios. Abierto todos los días.
+          </p>
+          <div class="footer-badge">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor"/>
+              <path d="M3.5 5.5l1.5 1.5L7.5 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Lun–Dom 9:30 a 20:00 · Calle Cuzco 999
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Explorar</h5>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="#">Sobre Innova</a></li>
+            <li><a href="#">Envíos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Categorías</h5>
+          <ul>
+            <li><a href="#">💻 Laptops y PCs</a></li>
+            <li><a href="#">🎧 Audio</a></li>
+            <li><a href="#">🖱️ Periféricos</a></li>
+            <li><a href="#">📱 Accesorios</a></li>
+            <li><a href="#">🏠 Hogar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contáctanos</h5>
+          <div style="margin-bottom: 1.75rem;">
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">📞</div>
+              <a href="tel:+51920213682">+51 920 213 682</a>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">💬</div>
+              <a href="https://wa.me/51981862204" target="_blank">WhatsApp: 981 862 204</a>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">✉️</div>
+              <a href="mailto:innovaimportpiura@gmail.com">innovaimportpiura@gmail.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">📍</div>
+              <a href="https://maps.google.com" target="_blank">Calle Cuzco 999, Piura</a>
+            </div>
+          </div>
+
+          <div class="footer-social">
+            <a href="https://www.instagram.com/innova.importpiura/" target="_blank">
+              <div class="footer-social-icon">📸</div>
+              <span>@innova.importpiura</span>
+            </a>
+            <a href="https://www.facebook.com/innovaimportpiura/" target="_blank">
+              <div class="footer-social-icon">f</div>
+              <span>Innova Import Piura</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">
+        &copy; 2026 <strong>Innova Import Piura</strong>. Todos los derechos reservados.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Política de Privacidad</a>
+        <div class="footer-bottom-sep"></div>
+        <a href="#">Términos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO LATERAL -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>🛒 Mi Cotización</h3>
+      <button class="cart-close-btn" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-sidebar-footer">
+      <div class="cart-total">
+        <span>Total estimado:</span>
+        <span id="cartTotal">S/. 0.00</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn" style="width:100%; margin-bottom:.75rem;" onclick="window.location.href='cart.html'">
+        Ver cotización completa →
+      </button>
+      <button class="btn btn-secondary" style="width:100%;" onclick="closeCart()">
+        Seguir viendo
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Producto</h2>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <div class="modal-details">
+          <h3>Descripción</h3>
+          <p id="modalDesc">Producto importado Innova, disponible en tienda y delivery.</p>
+          <div class="presentations-section">
+            <h3>Opciones Disponibles</h3>
+            <div id="presentationsContainer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+        <button class="btn btn-primary" onclick="addSelectedToCart()">Agregar a Cotización</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
